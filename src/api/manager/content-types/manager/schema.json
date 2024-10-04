@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "managers",
+  "info": {
+    "singularName": "manager",
+    "pluralName": "managers",
+    "displayName": "Manager",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "manager_id": {
+      "type": "string",
+      "unique": true
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "employees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee",
+      "mappedBy": "manager"
+    },
+    "department": {
+      "type": "string"
+    },
+    "manager_email": {
+      "type": "email"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "hire_date": {
+      "type": "date"
+    },
+    "salary": {
+      "type": "string"
+    },
+    "team_size": {
+      "type": "integer"
+    },
+    "years_of_experience": {
+      "type": "integer"
+    },
+    "performance_rating": {
+      "type": "text"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "mappedBy": "manager_ids"
+    }
+  }
+}
